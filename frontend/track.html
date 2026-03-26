@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Complaint</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🌿 <strong>CivicConnect</strong></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+
+    </nav>
+</header>
+
+<div class="card">
+    <h2>🔍 Track Complaint Status</h2>
+    <input type="text" id="trackId" placeholder="Enter Complaint ID">
+    <button class="btn btn-primary" style="width:100%"onclick="trackComplaint()">Check Status</button>
+
+ <!-- RESULT DISPLAY -->
+    <p id="result" style="margin-top:15px;"></p>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

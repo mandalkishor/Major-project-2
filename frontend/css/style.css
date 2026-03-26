@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+/* 
+body {
+    background: #f9fafb;
+    color: #111827;
+} */
+
+/* NAVBAR */
+.navbar {
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+}
+
+.badge {
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #16a34a;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+}
+
+.hero span {
+    color: #16a34a;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+}
+
+.btn {
+    padding: 14px 30px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #16a34a;
+    color: white;
+}
+
+.btn-outline {
+    background: white;
+    border: 1px solid #d1d5db;
+    margin-left: 15px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    width: 480px;
+    margin: 60px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+}
+
+/* FORM */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 18px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+}
+
+textarea {
+    resize: none;
+}
+
+/* TABLE */
+table {
+    width: 90%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background: #f3f4f6;
+    text-align: left;
+}
+
+.status-pending { color: orange; }
+.status-progress { color: blue; }
+.status-done { color: green; }
+.btn-danger {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c1121f;
+}
+body {
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.dark .navbar {
+    background: #060a10;
+    border-bottom: 1px solid var(--neon-blue);
+}
+
+body.dark .card,
+body.dark table {
+    background: var(--card-dark);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
+}
+
+body.dark th {
+    color: var(--neon-blue);
+}
+
+body.dark td {
+    color: #d0d0d0;
+}
+
+body.dark button {
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+body.dark button:hover {
+    background: var(--neon-blue);
+    color: black;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+.theme-btn {
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+:root {
+    --bg-light: #f5f5f5;
+    --text-light: #222;
+
+    --bg-dark: #0b0f14;
+    --card-dark: #121826;
+    --text-dark: #e6e6e6;
+    --neon-blue: #00e5ff;
+}
+/* Ensure the success modal is always on the very top layer */
+.modal, .success-popup {
+    z-index: 9999 !important;
+}
+
+/* Ensure the map stays below navigation and popups */
+#map {
+    z-index: 1 !important;
+}
+/* Keeps the map layers at the bottom */
+
+/* Fix for manual typing: make sure the location input isn't greyed out */
+#location {
+    cursor: text;
+    background-color: var(--input-bg); /* Use your theme variable */
+}

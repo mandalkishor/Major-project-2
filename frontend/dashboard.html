@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Public Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body onload="loadDashboard()">
+
+<header class="navbar">
+    <div class="logo">🌿 <strong>CivicConnect</strong></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+
+    </nav>
+</header>
+
+<h2 style="margin:40px;">Community Complaint Dashboard</h2>
+
+<table>
+    <thead>
+        <tr>
+            <!-- <th>ID</th> -->
+            <th>Category</th>
+            <th>Area</th>
+            <th>Status</th>
+            <th>Reports</th>
+            <th>Action</th>
+        </tr>
+
+    </thead>
+    <tbody id="dashboardTable">
+        <!-- DATA WILL COME FROM JS -->
+    </tbody>
+</table>
+<br>
+<div style="display: flex; flex-direction: row; gap: 20px; margin: 20px; align-items: stretch;">
+    
+    <div class="card" style="flex: 1; min-width: 0;">
+        <h3></h3>
+        <div id="piechart" style="width: 100%; height: 400px;"></div>
+    </div>
+
+    <div class="card" style="flex: 1; min-width: 0;">
+        <h3>📍 Live Incident Map</h3>
+        <div id="adminMap" style="height: 400px; width: 100%; border-radius: 8px; border: 1px solid #ccc;"></div>
+        <div style="margin-top: 10px; font-size: 0.8em; display: flex; gap: 10px;">
+            <span><b style="color: red;">●</b> Pending</span>
+            <span><b style="color: green;">●</b> Resolved</span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/admin_map.js"></script>
+<script>
+    // Wait for everything to be ready
+    window.onload = function() {
+        if (typeof google !== 'undefined') {
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(refreshChart);
+        }
+        loadDashboard();
+    };
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Only call the dashboard table/chart logic here.
+        // The map logic is already triggered inside admin_map.js
+        if (typeof loadDashboard === 'function') {
+            loadDashboard();
+        }
+    });
+</script>
+</script>
+</body>
+</html>

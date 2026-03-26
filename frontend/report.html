@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Issue</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🌿 <strong>CivicConnect</strong></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+
+    </nav>
+</header>
+
+<div class="card">
+    <h2>📣 Report an Issue</h2>
+
+    <!-- SINGLE FORM -->
+    <form onsubmit="submitComplaint(event)">
+
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <select id="category" required onchange="toggleOtherCategory()">
+            <option value="">Select Category</option>
+            <option value="Road">Road Damage</option>
+            <option value="Garbage">Garbage Issue</option>
+            <option value="Street Light">Street Light Failure</option>
+            <option value="Other">Other (Please Specify)</option>
+        </select>
+        <input type="text" id="otherCategoryInput" placeholder="Enter custom category" style="display:none; margin-top: 10px;">
+
+        <!-- <input type="text" id="location" placeholder="Area / Landmark" required> -->
+        <div class="form-group" style="margin-top: 15px;">
+            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Pinpoint Location</label>
+            <div style="display: flex; gap: 5px; margin-bottom: 10px;">
+                <input type="text" id="mapSearch" placeholder="Search for your area (e.g. Kothrud, Pune)" style="flex-grow: 1; padding: 8px;">
+                <button type="button" onclick="searchArea()" class="btn" style="padding: 5px 15px; background: #3498db; color: white; border: none; cursor: pointer;">🔍 Search</button>
+            </div>
+            
+            <button type="button" onclick="getUserLocation()" class="btn" style="margin-bottom: 10px; background: #eee; color: #333; font-size: 0.8em;">
+                📍 Use My Current Location
+            </button>
+
+            <div id="map" style="height: 250px; width: 100%; border-radius: 8px; margin-bottom: 10px; border: 1px solid #ccc; z-index: 1;"></div>
+
+            <input type="text" id="location" placeholder="Enter address or use map above" required>
+            
+            <input type="hidden" id="latitude">
+            <input type="hidden" id="longitude">
+        </div>
+        <textarea id="description" placeholder="Describe the issue" required></textarea>
+
+        <input type="file" id="image">
+
+        <button type="submit" class="btn btn-primary" style="width:100%">
+            Submit Complaint
+        </button>
+
+    </form>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/admin_map.js"></script>
+</body>
+</html>
